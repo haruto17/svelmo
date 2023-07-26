@@ -18,8 +18,7 @@
         class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
         on:click={() => (isModalOpen = false)}>✕</button
       >
-      <h3 class="font-bold text-lg">Hello!</h3>
-      <p>This is modal!!</p>
+      <h3 class="font-bold text-lg">Create New Memo</h3>
       <input
         type="text"
         placeholder="Title"
@@ -45,7 +44,9 @@
         bind:value={tags}
       />
       <div class="modal-action">
-        <button class="btn" on:click={() => (isModalOpen = false)}>add</button>
+        <button class="btn" on:click={() => (isModalOpen = false)}
+          >create</button
+        >
       </div>
     </form>
   </dialog>
