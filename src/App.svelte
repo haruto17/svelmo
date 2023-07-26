@@ -6,9 +6,7 @@
 </script>
 
 <main>
-  <button
-    class="btn btn-secondary bg-green-500"
-    on:click={() => (isModalOpen = true)}>+</button
+  <button class="btn btn-accent" on:click={() => (isModalOpen = true)}>+</button
   >
   <p>title : {title}</p>
   <p>contents : {contents}</p>
@@ -24,19 +22,19 @@
       <input
         type="text"
         placeholder="Title"
-        class="input input-bordered w-full max-w-xs"
+        class="input input-bordered input-accent w-full max-w-xs"
         bind:value={title}
       />
       <input
         type="text"
         placeholder="Contents"
-        class="input input-bordered w-full max-w-xs"
+        class="input input-bordered input-accent w-full max-w-xs"
         bind:value={contents}
       />
       <input
         type="text"
         placeholder="Tags"
-        class="input input-bordered w-full max-w-xs"
+        class="input input-bordered input-accent w-full max-w-xs"
         bind:value={tags}
       />
       <div class="modal-action">
