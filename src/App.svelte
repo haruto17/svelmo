@@ -1,6 +1,7 @@
 <script lang="ts">
   let isModalOpen = false;
   let title = "";
+  let subtitle = "";
   let contents = "";
   let tags = "";
 </script>
@@ -24,6 +25,12 @@
         placeholder="Title"
         class="input input-bordered input-accent w-full max-w-xs"
         bind:value={title}
+      />
+      <input
+        type="text"
+        placeholder="SubTitle"
+        class="input input-bordered input-accent w-full max-w-xs"
+        bind:value={subtitle}
       />
       <input
         type="text"
