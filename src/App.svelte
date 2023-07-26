@@ -5,7 +5,7 @@
 <main>
   <button
     class="btn btn-secondary bg-green-500"
-    on:click={() => (isModalOpen = true)}>add</button
+    on:click={() => (isModalOpen = true)}>+</button
   >
   <dialog class="modal" class:modal-open={isModalOpen}>
     <form method="dialog" class="modal-box">
@@ -31,8 +31,7 @@
         class="input input-bordered w-full max-w-xs"
       />
       <div class="modal-action">
-        <button class="btn" on:click={() => (isModalOpen = false)}>Close</button
-        >
+        <button class="btn" on:click={() => (isModalOpen = false)}>add</button>
       </div>
     </form>
   </dialog>
