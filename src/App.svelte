@@ -4,14 +4,36 @@
   let subtitle = "";
   let contents = "";
   let tags = "";
+  let data_list = [];
+
+  function handleCreateClick() {
+    data_list = [
+      ...data_list,
+      {
+        title: title,
+        subtitle: subtitle,
+        contents: contents,
+        tags: tags,
+      },
+    ];
+    title = "";
+    subtitle = "";
+    contents = "";
+    tags = "";
+    isModalOpen = false;
+  }
 </script>
 
 <main>
   <button class="btn btn-accent" on:click={() => (isModalOpen = true)}>+</button
   >
-  <p>title : {title}</p>
-  <p>contents : {contents}</p>
-  <p>tags : {tags}</p>
+  <ul>
+    {#each data_list as data}
+      <li>
+        <p>{data.title} {data.subtitle} {data.contents} {data.tags}</p>
+      </li>
+    {/each}
+  </ul>
   <dialog class="modal" class:modal-open={isModalOpen}>
     <form method="dialog" class="modal-box">
       <button
@@ -44,9 +66,7 @@
         bind:value={tags}
       />
       <div class="modal-action">
-        <button class="btn" on:click={() => (isModalOpen = false)}
-          >create</button
-        >
+        <button class="btn" on:click={handleCreateClick}>create</button>
       </div>
     </form>
   </dialog>
