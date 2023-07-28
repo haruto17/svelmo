@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Modal from "./lib/Modal.svelte";
   let isModalOpen = false;
   let title = "";
   let subtitle = "";
@@ -42,7 +43,6 @@
       </li>
     {/each}
   </ul>
-  -->
   <Modal isOpen={modalOpen} on:closeEvent={closeModal} />
 </main>
 
