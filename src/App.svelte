@@ -22,13 +22,9 @@
   //   tags = "";
   // }
 
-  let modalOpen = false;
+  let isModalOpen = false;
   function openModal() {
-    modalOpen = true;
-  }
-
-  function closeModal() {
-    modalOpen = false;
+    isModalOpen = true;
   }
 </script>
 
@@ -41,7 +37,7 @@
       </li>
     {/each}
   </ul> -->
-  <Modal isOpen={modalOpen} on:closeEvent={closeModal} />
+  <Modal bind:isModalOpen />
 </main>
 
 <style></style>

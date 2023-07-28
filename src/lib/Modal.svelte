@@ -1,15 +1,12 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  export let isModalOpen;
 
-  export let isOpen = false;
-
-  const dispatch = createEventDispatcher();
   const close = () => {
-    dispatch("closeEvent");
+    isModalOpen = false;
   };
 </script>
 
-<dialog class="modal" class:modal-open={isOpen}>
+<dialog class="modal" class:modal-open={isModalOpen}>
   <form method="dialog" class="modal-box">
     <button
       class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
