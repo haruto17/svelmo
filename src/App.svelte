@@ -1,10 +1,7 @@
 <script lang="ts">
   import Modal from "./lib/Modal.svelte";
-  let isModalOpen = false;
-  let title = "";
-  let subtitle = "";
-  let contents = "";
-  let tags = "";
+
+  let memo;
   let data_list = [];
 
   // function handleCreateClick() {
@@ -30,12 +27,12 @@
 
   function closeModal() {
     modalOpen = false;
+    console.log(memo);
   }
 </script>
 
 <main>
-  <button class="btn btn-accent" on:click={() => (isModalOpen = true)}>+</button
-  >
+  <button class="btn btn-accent" on:click={openModal}>+</button>
   <ul>
     {#each data_list as data}
       <li>
@@ -43,7 +40,7 @@
       </li>
     {/each}
   </ul>
-  <Modal isOpen={modalOpen} on:closeEvent={closeModal} />
+  <Modal isOpen={modalOpen} on:closeEvent={closeModal} bind:memo_obj={memo} />
 </main>
 
 <style></style>
