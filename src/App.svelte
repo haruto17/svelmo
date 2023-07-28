@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Modal from "./lib/Modal.svelte";
+  let isModalOpen = false;
   let title = "";
   let subtitle = "";
   let contents = "";
@@ -22,22 +22,28 @@
   //   tags = "";
   // }
 
-  let isModalOpen = false;
+  let modalOpen = false;
   function openModal() {
-    isModalOpen = true;
+    modalOpen = true;
+  }
+
+  function closeModal() {
+    modalOpen = false;
   }
 </script>
 
 <main>
-  <button class="btn btn-accent" on:click={openModal}>+</button>
-  <!-- <ul>
+  <button class="btn btn-accent" on:click={() => (isModalOpen = true)}>+</button
+  >
+  <ul>
     {#each data_list as data}
       <li>
         <p>{data.title} {data.subtitle} {data.contents} {data.tags}</p>
       </li>
     {/each}
-  </ul> -->
-  <Modal bind:isModalOpen />
+  </ul>
+  -->
+  <Modal isOpen={modalOpen} on:closeEvent={closeModal} />
 </main>
 
 <style></style>
