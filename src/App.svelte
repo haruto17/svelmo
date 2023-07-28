@@ -28,6 +28,7 @@
   function closeModal() {
     modalOpen = false;
     console.log(memo);
+    data_list = [...data_list, memo];
   }
 </script>
 
