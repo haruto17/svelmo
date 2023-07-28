@@ -1,49 +1,75 @@
 <script lang="ts">
-  import svelteLogo from "./assets/svelte.svg";
-  import viteLogo from "/vite.svg";
-  import Counter from "./lib/Counter.svelte";
+  let isModalOpen = false;
+  let title = "";
+  let subtitle = "";
+  let contents = "";
+  let tags = "";
+  let data_list = [];
+
+  function handleCreateClick() {
+    data_list = [
+      ...data_list,
+      {
+        title: title,
+        subtitle: subtitle,
+        contents: contents,
+        tags: tags,
+      },
+    ];
+    title = "";
+    subtitle = "";
+    contents = "";
+    tags = "";
+    isModalOpen = false;
+  }
 </script>
 
 <main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a
-      href="https://github.com/sveltejs/kit#readme"
-      target="_blank"
-      rel="noreferrer">SvelteKit</a
-    >, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">Click on the Vite and Svelte logos to learn more</p>
+  <button class="btn btn-accent" on:click={() => (isModalOpen = true)}>+</button
+  >
+  <ul>
+    {#each data_list as data}
+      <li>
+        <p>{data.title} {data.subtitle} {data.contents} {data.tags}</p>
+      </li>
+    {/each}
+  </ul>
+  <dialog class="modal" class:modal-open={isModalOpen}>
+    <form method="dialog" class="modal-box">
+      <button
+        class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+        on:click={() => (isModalOpen = false)}>✕</button
+      >
+      <h3 class="font-bold text-lg">Create New Memo</h3>
+      <input
+        type="text"
+        placeholder="Title"
+        class="input input-bordered input-accent w-full max-w-xs"
+        bind:value={title}
+      />
+      <input
+        type="text"
+        placeholder="SubTitle"
+        class="input input-bordered input-accent w-full max-w-xs"
+        bind:value={subtitle}
+      />
+      <input
+        type="text"
+        placeholder="Contents"
+        class="input input-bordered input-accent w-full max-w-xs"
+        bind:value={contents}
+      />
+      <input
+        type="text"
+        placeholder="Tags"
+        class="input input-bordered input-accent w-full max-w-xs"
+        bind:value={tags}
+      />
+      <div class="modal-action">
+        <button class="btn" on:click={handleCreateClick}>create</button>
+      </div>
+    </form>
+  </dialog>
 </main>
 
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
+<style></style>
