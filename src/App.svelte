@@ -28,7 +28,9 @@
   function closeModal() {
     modalOpen = false;
     console.log(memo);
-    data_list = [...data_list, memo];
+    if (memo.title.length != 0) {
+      data_list = [...data_list, memo];
+    }
   }
 </script>
 
