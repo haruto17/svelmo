@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Modal from "./lib/Modal.svelte";
+  import CreateModal from "./lib/CreateModal.svelte";
+  import DisplayModal from "./lib/DisplayModal.svelte";
 
   let memo;
   let data_list = [];
@@ -20,24 +21,40 @@
   //   tags = "";
   // }
 
-  let modalOpen = false;
-  function openModal() {
-    modalOpen = true;
+  let createModalOpen = false;
+  function openCreateModal() {
+    createModalOpen = true;
   }
 
-  function closeModal() {
-    modalOpen = false;
+  function closeCreateModal() {
+    createModalOpen = false;
     console.log(memo);
     if (memo.title.length != 0) {
       data_list = [...data_list, memo];
     }
   }
+
+  let displayModalOpen = false;
+  function openDisplayModal(index: number) {
+    displayModalOpen = true;
+    console.log(data_list[index]);
+  }
+
+  function closeDisplayModal() {
+    displayModalOpen = false;
+  }
+
+  function deleteMemo(index: number) {
+    const new_data = [...data_list];
+    new_data.splice(index, 1);
+    data_list = new_data;
+  }
 </script>
 
 <main>
-  <button class="btn btn-accent" on:click={openModal}>+</button>
+  <button class="btn btn-accent" on:click={openCreateModal}>+</button>
   <ul>
-    {#each data_list as data}
+    {#each data_list as data, i}
       <div
         class="card border-2 border-accent w-96 bg-neutrals text-primary-content cursor-pointer"
       >
@@ -46,7 +63,7 @@
           <p>{data.subtitle}</p>
           <div class="card-actions justify-end">
             <div class="tooltip" data-tip="delete">
-              <button class="btn"
+              <button class="btn" on:click={() => deleteMemo(i)}
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -64,7 +81,7 @@
               </button>
             </div>
             <div class="tooltip" data-tip="open">
-              <button class="btn"
+              <button class="btn" on:click={() => openDisplayModal(i)}
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -86,7 +103,12 @@
       </div>
     {/each}
   </ul>
-  <Modal isOpen={modalOpen} on:closeEvent={closeModal} bind:memo_obj={memo} />
+  <CreateModal
+    isOpen={createModalOpen}
+    on:closeEvent={closeCreateModal}
+    bind:memo_obj={memo}
+  />
+  <DisplayModal isOpen={displayModalOpen} on:closeEvent={closeDisplayModal} />
 </main>
 
 <style></style>
