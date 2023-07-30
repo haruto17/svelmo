@@ -36,9 +36,14 @@
   <button class="btn btn-accent" on:click={openModal}>+</button>
   <ul>
     {#each data_list as data}
-      <li>
-        <p>{data.title} {data.subtitle} {data.contents} {data.tags}</p>
-      </li>
+      <div
+        class="card border-2 border-accent w-96 bg-neutrals text-primary-content cursor-pointer"
+      >
+        <div class="card-body">
+          <h2 class="card-title">{data.title}</h2>
+          <p>{data.subtitle}</p>
+        </div>
+      </div>
     {/each}
   </ul>
   <Modal isOpen={modalOpen} on:closeEvent={closeModal} bind:memo_obj={memo} />
