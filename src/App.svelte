@@ -35,9 +35,11 @@
   }
 
   let displayModalOpen = false;
+  let passToDModal = {};
   function openDisplayModal(index: number) {
     displayModalOpen = true;
-    console.log(data_list[index]);
+    passToDModal = data_list[index];
+    // console.log(data_list[index]);
   }
 
   function closeDisplayModal() {
@@ -108,7 +110,11 @@
     on:closeEvent={closeCreateModal}
     bind:memo_obj={memo}
   />
-  <DisplayModal isOpen={displayModalOpen} on:closeEvent={closeDisplayModal} />
+  <DisplayModal
+    isOpen={displayModalOpen}
+    aaa={passToDModal}
+    on:closeEvent={closeDisplayModal}
+  />
 </main>
 
 <style></style>

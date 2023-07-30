@@ -2,11 +2,7 @@
   import { createEventDispatcher } from "svelte";
 
   export let isOpen = false;
-
-  let title = "";
-  let subtitle = "";
-  let contents = "";
-  let tags = "";
+  export let aaa = {};
 
   const dispatch = createEventDispatcher();
   const close = () => {
@@ -25,25 +21,25 @@
       type="text"
       placeholder="Title"
       class="input input-bordered input-accent w-full max-w-xs"
-      bind:value={title}
+      value={aaa.title}
     />
     <input
       type="text"
       placeholder="SubTitle"
       class="input input-bordered input-accent w-full max-w-xs"
-      bind:value={subtitle}
+      value={aaa.subtitle}
     />
     <input
       type="text"
       placeholder="Contents"
       class="input input-bordered input-accent w-full max-w-xs"
-      bind:value={contents}
+      value={aaa.contents}
     />
     <input
       type="text"
       placeholder="Tags"
       class="input input-bordered input-accent w-full max-w-xs"
-      bind:value={tags}
+      value={aaa.tags}
     />
   </form>
 </dialog>
