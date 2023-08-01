@@ -42,7 +42,8 @@
     // console.log(data_list[index]);
   }
 
-  function closeDisplayModal() {
+  function closeDisplayModal(event) {
+    console.log(event.detail.new_memo.title);
     displayModalOpen = false;
   }
 
