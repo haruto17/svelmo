@@ -36,14 +36,17 @@
 
   let displayModalOpen = false;
   let passToDModal = {};
+  let nowOpenIndex = 0;
   function openDisplayModal(index: number) {
-    displayModalOpen = true;
+    nowOpenIndex = index;
     passToDModal = data_list[index];
+    displayModalOpen = true;
     // console.log(data_list[index]);
   }
 
   function closeDisplayModal(event) {
-    console.log(event.detail.new_memo.title);
+    // console.log(event.detail.new_memo.title);
+    data_list[nowOpenIndex] = event.detail.new_memo;
     displayModalOpen = false;
   }
 
