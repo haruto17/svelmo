@@ -43,10 +43,16 @@
       value={aaa.subtitle}
       bind:this={new_subtitle}
     />
-    <input
+    <!-- <input
       type="text"
       placeholder="Contents"
       class="input input-bordered input-accent w-full max-w-xs"
+      value={aaa.contents}
+      bind:this={new_contents}
+    /> -->
+    <textarea
+      class="textarea textarea-accent w-full max-w-xs h-64"
+      placeholder="Contents"
       value={aaa.contents}
       bind:this={new_contents}
     />
