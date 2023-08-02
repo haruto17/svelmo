@@ -51,7 +51,7 @@
       bind:this={new_contents}
     /> -->
     <textarea
-      class="textarea textarea-accent w-full max-w-xs h-64"
+      class="textarea textarea-accent w-full max-w-xs h-64 resize-none"
       placeholder="Contents"
       value={aaa.contents}
       bind:this={new_contents}
