@@ -51,7 +51,7 @@
       bind:value={contents}
     /> -->
     <textarea
-      class="textarea textarea-accent w-full max-w-xs"
+      class="textarea textarea-accent w-full max-w-xs h-64"
       placeholder="Contents"
       bind:value={contents}
     />
