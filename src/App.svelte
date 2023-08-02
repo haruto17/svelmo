@@ -62,7 +62,7 @@
   <ul>
     {#each data_list as data, i}
       <div
-        class="card border-2 border-accent w-96 bg-neutrals text-primary-content cursor-pointer"
+        class="card w-96 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content cursor-pointer"
       >
         <div class="card-body">
           <h2 class="card-title">{data.title}</h2>
