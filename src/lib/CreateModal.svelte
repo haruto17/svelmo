@@ -44,10 +44,15 @@
       class="input input-bordered input-accent w-full max-w-xs"
       bind:value={subtitle}
     />
-    <input
+    <!-- <input
       type="text"
       placeholder="Contents"
       class="input input-bordered input-accent w-full max-w-xs"
+      bind:value={contents}
+    /> -->
+    <textarea
+      class="textarea textarea-accent w-full max-w-xs"
+      placeholder="Contents"
       bind:value={contents}
     />
     <input
