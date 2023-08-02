@@ -58,7 +58,10 @@
 </script>
 
 <main>
-  <button class="btn btn-accent" on:click={openCreateModal}>+</button>
+  <div class="tooltip tooltip-bottom" data-tip="new">
+    <button class="btn btn-accent" on:click={openCreateModal}>+</button>
+  </div>
+
   <ul>
     {#each data_list as data, i}
       <div
