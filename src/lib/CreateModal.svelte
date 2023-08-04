@@ -9,19 +9,16 @@
       title: title,
       subtitle: subtitle,
       contents: contents,
-      tags: tags,
     };
     dispatch("closeEvent");
     title = "";
     subtitle = "";
     contents = "";
-    tags = "";
   };
 
   let title = "";
   let subtitle = "";
   let contents = "";
-  let tags = "";
   export let memo_obj = {};
 </script>
 
@@ -44,22 +41,10 @@
       class="input input-bordered input-accent w-full max-w-xs"
       bind:value={subtitle}
     />
-    <!-- <input
-      type="text"
-      placeholder="Contents"
-      class="input input-bordered input-accent w-full max-w-xs"
-      bind:value={contents}
-    /> -->
     <textarea
       class="textarea textarea-accent w-full max-w-xs h-64 resize-none"
       placeholder="Contents"
       bind:value={contents}
-    />
-    <input
-      type="text"
-      placeholder="Tags"
-      class="input input-bordered input-accent w-full max-w-xs"
-      bind:value={tags}
     />
     <div class="modal-action">
       <button class="btn" on:click={close}>create</button>

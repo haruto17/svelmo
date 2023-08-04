@@ -1,30 +1,34 @@
 <script lang="ts">
+  import CreateModal from "./CreateModal.svelte";
+  import DisplayModal from "./DisplayModal.svelte";
+
+  let memo;
   let memo_data = [];
 
-  let title = "";
-  let subtitle = "";
-  let contents = "";
-
   let isCreateModalOpen = false;
-  function createNewMemo() {
-    if (title.length != 0) {
-      memo_data = [
-        ...memo_data,
-        {
-          title: title,
-          subtitle: subtitle,
-          contents: contents,
-        },
-      ];
-    }
-    title = "";
-    subtitle = "";
-    contents = "";
-    isCreateModalOpen = false;
+  function openCreateModal() {
+    isCreateModalOpen = true;
   }
 
+  function closeCreateModal() {
+    isCreateModalOpen = false;
+    if (memo.title.length != 0) {
+      memo_data = [...memo_data, memo];
+    }
+  }
+
+  let isDisplayModalOpen = false;
+  let passToDModal = {};
+  let nowOpenIndex = 0;
   function openDisplayModal(index: number) {
-    console.log(index);
+    nowOpenIndex = index;
+    passToDModal = memo_data[index];
+    isDisplayModalOpen = true;
+  }
+
+  function closeDisplayModal(event) {
+    memo_data[nowOpenIndex] = event.detail.new_memo;
+    isDisplayModalOpen = false;
   }
 
   function deleteMemo(index: number) {
@@ -87,40 +91,19 @@
     {/each}
   </ul>
   <div class="tooltip tooltip-bottom" data-tip="add new">
-    <button class="btn btn-accent" on:click={() => (isCreateModalOpen = true)}
-      >+</button
-    >
+    <button class="btn btn-accent" on:click={openCreateModal}>+</button>
   </div>
-  <dialog class="modal" class:modal-open={isCreateModalOpen}>
-    <form method="dialog" class="modal-box">
-      <button
-        class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-        on:click={() => (isCreateModalOpen = false)}>✕</button
-      >
-      <h3 class="font-bold text-lg">Create New Memo</h3>
-      <input
-        type="text"
-        placeholder="Title"
-        class="input input-bordered input-success w-full max-w-xs"
-        bind:value={title}
-      />
-      <input
-        type="text"
-        placeholder="Subtitle"
-        class="input input-bordered input-success w-full max-w-xs"
-        bind:value={subtitle}
-      />
-      <input
-        type="text"
-        placeholder="Contents"
-        class="input input-bordered input-success w-full max-w-xs"
-        bind:value={contents}
-      />
-      <div class="modal-action">
-        <button class="btn" on:click={createNewMemo}>create</button>
-      </div>
-    </form>
-  </dialog>
+
+  <CreateModal
+    isOpen={isCreateModalOpen}
+    on:closeEvent={closeCreateModal}
+    bind:memo_obj={memo}
+  />
+  <DisplayModal
+    isOpen={isDisplayModalOpen}
+    aaa={passToDModal}
+    on:closeEvent={closeDisplayModal}
+  />
 </body>
 
 <style>
