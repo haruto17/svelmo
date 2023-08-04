@@ -1,6 +1,7 @@
 <script lang="ts">
   import CreateModal from "./lib/CreateModal.svelte";
   import DisplayModal from "./lib/DisplayModal.svelte";
+  import Category from "./lib/Category.svelte";
 
   let memo;
   let data_list = [];
@@ -61,6 +62,8 @@
   <div class="tooltip tooltip-bottom" data-tip="new">
     <button class="btn btn-accent" on:click={openCreateModal}>+</button>
   </div>
+
+  <Category />
 
   <ul>
     {#each data_list as data, i}
