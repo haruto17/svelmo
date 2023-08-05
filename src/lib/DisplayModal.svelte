@@ -7,7 +7,6 @@
   let new_title;
   let new_subtitle;
   let new_contents;
-  let new_tags;
 
   const dispatch = createEventDispatcher();
   const close = () => {
@@ -15,7 +14,6 @@
       title: new_title.value,
       subtitle: new_subtitle.value,
       contents: new_contents.value,
-      tags: new_tags.value,
     };
     dispatch("closeEvent", {
       new_memo: memo,
@@ -43,25 +41,11 @@
       value={aaa.subtitle}
       bind:this={new_subtitle}
     />
-    <!-- <input
-      type="text"
-      placeholder="Contents"
-      class="input input-bordered input-accent w-full max-w-xs"
-      value={aaa.contents}
-      bind:this={new_contents}
-    /> -->
     <textarea
       class="textarea textarea-accent w-full max-w-xs h-64 resize-none"
       placeholder="Contents"
       value={aaa.contents}
       bind:this={new_contents}
-    />
-    <input
-      type="text"
-      placeholder="Tags"
-      class="input input-bordered input-accent w-full max-w-xs"
-      value={aaa.tags}
-      bind:this={new_tags}
     />
   </form>
 </dialog>
