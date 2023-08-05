@@ -23,10 +23,7 @@
 
 <dialog class="modal" class:modal-open={isOpen}>
   <form method="dialog" class="modal-box">
-    <button
-      class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-      on:click={close}>✕</button
-    >
+    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={close}>✕</button>
     <input
       type="text"
       placeholder="Title"

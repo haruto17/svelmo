@@ -43,9 +43,7 @@
   <div class="h-80 overflow-y-scroll">
     <ul>
       {#each memo_data as data, i}
-        <div
-          class="card w-96 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content"
-        >
+        <div class="card w-96 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content">
           <div class="card-body">
             <h2 class="card-title">{data.title}</h2>
             <p>{data.subtitle}</p>
@@ -78,11 +76,7 @@
                     stroke="currentColor"
                     class="w-6 h-6"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-                    />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                   </svg>
                 </button>
               </div>
@@ -97,16 +91,8 @@
     <button class="btn btn-accent" on:click={openCreateModal}>+</button>
   </div>
 
-  <CreateModal
-    isOpen={isCreateModalOpen}
-    on:closeEvent={closeCreateModal}
-    bind:memo_obj={memo}
-  />
-  <DisplayModal
-    isOpen={isDisplayModalOpen}
-    aaa={passToDModal}
-    on:closeEvent={closeDisplayModal}
-  />
+  <CreateModal isOpen={isCreateModalOpen} on:closeEvent={closeCreateModal} bind:memo_obj={memo} />
+  <DisplayModal isOpen={isDisplayModalOpen} aaa={passToDModal} on:closeEvent={closeDisplayModal} />
 </body>
 
 <style>
