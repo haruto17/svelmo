@@ -3,7 +3,17 @@
 </script>
 
 <main>
-  <Category />
+  <div class="flex flex-row">
+    <Category />
+    <Category />
+    <Category />
+    <Category />
+    <Category />
+    <Category />
+    <Category />
+    <Category />
+    <Category />
+  </div>
 </main>
 
 <style></style>
