@@ -38,12 +38,12 @@
   }
 </script>
 
-<body class="border-2 border-accent rounded-2xl">
+<body class="w-96 border-2 border-accent rounded-2xl">
   <p>title</p>
   <div class="h-80 overflow-y-scroll">
     <ul>
       {#each memo_data as data, i}
-        <div class="card w-96 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content">
+        <div class="card w-80 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content">
           <div class="card-body">
             <h2 class="card-title">{data.title}</h2>
             <p>{data.subtitle}</p>
