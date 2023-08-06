@@ -38,11 +38,11 @@
   }
 </script>
 
-<body class="w-96 border-2 border-accent rounded-2xl">
+<body class="w-96 h-[80vh] border-2 border-accent rounded-2xl">
   <div class="flex justify-center">
     <p>title</p>
   </div>
-  <div class="h-80 overflow-y-scroll">
+  <div class="h-4/5 overflow-y-scroll">
     <ul class="flex flex-col items-center">
       {#each memo_data as data, i}
         <div class="card w-80 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content">
