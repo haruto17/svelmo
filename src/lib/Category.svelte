@@ -39,7 +39,9 @@
 </script>
 
 <body class="w-96 border-2 border-accent rounded-2xl">
-  <p>title</p>
+  <div class="flex justify-center">
+    <p>title</p>
+  </div>
   <div class="h-80 overflow-y-scroll">
     <ul class="flex flex-col items-center">
       {#each memo_data as data, i}
@@ -87,8 +89,10 @@
     </ul>
   </div>
 
-  <div class="tooltip tooltip-bottom" data-tip="add new">
-    <button class="w-80 btn btn-accent" on:click={openCreateModal}>+</button>
+  <div class="flex justify-center">
+    <div class="tooltip tooltip-bottom" data-tip="add new">
+      <button class="w-80 btn btn-accent" on:click={openCreateModal}>+</button>
+    </div>
   </div>
 
   <CreateModal isOpen={isCreateModalOpen} on:closeEvent={closeCreateModal} bind:memo_obj={memo} />
