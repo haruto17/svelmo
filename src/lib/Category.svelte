@@ -88,7 +88,7 @@
   </div>
 
   <div class="tooltip tooltip-bottom" data-tip="add new">
-    <button class="btn btn-accent" on:click={openCreateModal}>+</button>
+    <button class="w-80 btn btn-accent" on:click={openCreateModal}>+</button>
   </div>
 
   <CreateModal isOpen={isCreateModalOpen} on:closeEvent={closeCreateModal} bind:memo_obj={memo} />
