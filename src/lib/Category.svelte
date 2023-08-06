@@ -38,12 +38,14 @@
   }
 </script>
 
-<body>
-  <p>title</p>
-  <div class="h-80 overflow-y-scroll">
-    <ul>
+<body class="w-96 h-[80vh] border-2 border-accent rounded-2xl">
+  <div class="flex justify-center my-4">
+    <p>title</p>
+  </div>
+  <div class="h-4/5 overflow-y-scroll">
+    <ul class="flex flex-col items-center">
       {#each memo_data as data, i}
-        <div class="card w-96 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content">
+        <div class="card w-80 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content">
           <div class="card-body">
             <h2 class="card-title">{data.title}</h2>
             <p>{data.subtitle}</p>
@@ -87,8 +89,10 @@
     </ul>
   </div>
 
-  <div class="tooltip tooltip-bottom" data-tip="add new">
-    <button class="btn btn-accent" on:click={openCreateModal}>+</button>
+  <div class="flex justify-center">
+    <div class="tooltip tooltip-bottom" data-tip="add new">
+      <button class="w-80 btn btn-accent" on:click={openCreateModal}>+</button>
+    </div>
   </div>
 
   <CreateModal isOpen={isCreateModalOpen} on:closeEvent={closeCreateModal} bind:memo_obj={memo} />
