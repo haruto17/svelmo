@@ -39,7 +39,7 @@
 </script>
 
 <body class="w-96 h-[80vh] border-2 border-accent rounded-2xl">
-  <div class="flex justify-center">
+  <div class="flex justify-center my-4">
     <p>title</p>
   </div>
   <div class="h-4/5 overflow-y-scroll">
