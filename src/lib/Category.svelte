@@ -38,7 +38,7 @@
   }
 </script>
 
-<body>
+<body class="border-2 border-accent rounded-2xl">
   <p>title</p>
   <div class="h-80 overflow-y-scroll">
     <ul>
