@@ -9,8 +9,9 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "yarn run build && gh-pages -d build"
   },
+  "homepage": "https://haruto17.github.io/svelmo",
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "@tsconfig/svelte": "^5.0.0",
