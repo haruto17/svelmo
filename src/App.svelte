@@ -1,19 +1,44 @@
 <script lang="ts">
   import Category from "./lib/Category.svelte";
-  import { onMount } from "svelte";
+  import "./app.css";
 
-  let categoryContainer;
+  let index = 0;
 
   function addCategory() {
-    new Category({ target: document.getElementById("categoryList") });
+    let li = document.createElement("li");
+    li.id = index.toString();
+    li.className = "list-memo";
+    let categoryList = document.getElementById("categoryList");
+    categoryList.appendChild(li);
+
+    new Category({ target: document.getElementById(index.toString()) });
+
+    index++;
   }
 </script>
 
 <main>
   <div class="flex flex-row mx-5 my-10">
-    <div id="categoryList" class="flex flex-row" bind:this={categoryContainer}>
-      <Category />
-    </div>
+    <ul id="categoryList" class="overflow-x-auto whitespace-nowrap">
+      <!-- <li class="inline-block w-fit">
+        <Category />
+      </li>
+      <li class="inline-block w-fit">
+        <Category />
+      </li>
+      <li class="inline-block w-fit">
+        <Category />
+      </li>
+      <li class="inline-block w-fit">
+        <Category />
+      </li>
+      <li class="inline-block w-fit">
+        <Category />
+      </li>
+      <li class="inline-block w-fit">
+        <Category />
+      </li> -->
+    </ul>
 
     <button class="btn btn-accent h-[80vh]" on:click={addCategory}> + </button>
   </div>
