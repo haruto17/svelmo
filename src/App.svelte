@@ -10,7 +10,7 @@
 </script>
 
 <main>
-  <div class="flex flex-row">
+  <div class="flex flex-row mx-5 my-10">
     <div id="categoryList" class="flex flex-row" bind:this={categoryContainer}>
       <Category />
     </div>
