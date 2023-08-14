@@ -10,10 +10,13 @@
 </script>
 
 <main>
-  <div id="categoryList" class="flex flex-row" bind:this={categoryContainer}>
-    <Category />
+  <div class="flex flex-row">
+    <div id="categoryList" class="flex flex-row" bind:this={categoryContainer}>
+      <Category />
+    </div>
+
+    <button class="btn btn-accent h-[80vh]" on:click={addCategory}> + </button>
   </div>
-  <button class="btn btn-accent" on:click={addCategory}> + </button>
 </main>
 
 <style></style>
