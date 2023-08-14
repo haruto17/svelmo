@@ -19,7 +19,7 @@
 
 <main>
   <div class="flex flex-row mx-5 my-10">
-    <ul id="categoryList" class="overflow-x-auto overflow-y-hidden whitespace-nowrap">
+    <ul id="categoryList" class="flex overflow-x-auto overflow-y-hidden">
       <!-- <li class="inline-block w-fit">
         <Category />
       </li>
