@@ -47,8 +47,10 @@
       {#each memo_data as data, i}
         <div class="card w-80 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content">
           <div class="card-body">
-            <h2 class="card-title">{data.title}</h2>
-            <p>{data.subtitle}</p>
+            <div class="card-title truncate">
+              <h2 class="truncate">{data.title}</h2>
+            </div>
+            <p class="truncate">{data.subtitle}</p>
             <div class="card-actions justify-end">
               <div class="tooltip" data-tip="delete">
                 <button class="btn" on:click={() => deleteMemo(i)}
