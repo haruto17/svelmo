@@ -38,7 +38,7 @@
   }
 </script>
 
-<body class="w-96 h-[80vh] border-2 border-accent rounded-2xl">
+<body class="w-96 h-[80vh] mx-2 border-2 border-accent rounded-2xl">
   <div class="flex justify-center my-4">
     <input type="text" placeholder="title" class="input input-ghost w-full max-w-xs text-center" />
   </div>

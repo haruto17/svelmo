@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.list-memo {
+    display: inline-block;
+    width: fit-content;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
