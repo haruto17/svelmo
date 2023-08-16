@@ -19,26 +19,7 @@
 
 <main>
   <div class="flex flex-row mx-5 my-10">
-    <ul id="categoryList" class="flex overflow-x-auto overflow-y-hidden">
-      <!-- <li class="inline-block w-fit">
-        <Category />
-      </li>
-      <li class="inline-block w-fit">
-        <Category />
-      </li>
-      <li class="inline-block w-fit">
-        <Category />
-      </li>
-      <li class="inline-block w-fit">
-        <Category />
-      </li>
-      <li class="inline-block w-fit">
-        <Category />
-      </li>
-      <li class="inline-block w-fit">
-        <Category />
-      </li> -->
-    </ul>
+    <ul id="categoryList" class="flex overflow-x-auto overflow-y-hidden" />
 
     <div class="tooltip tooltip-top" data-tip="add category">
       <button class="btn btn-accent h-[80vh]" on:click={addCategory}>+</button>
