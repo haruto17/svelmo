@@ -92,7 +92,7 @@
   </div>
 
   <div class="flex justify-center">
-    <div class="tooltip tooltip-bottom" data-tip="add new">
+    <div class="tooltip tooltip-top" data-tip="add new">
       <button class="w-80 btn btn-accent" on:click={openCreateModal}>+</button>
     </div>
   </div>
