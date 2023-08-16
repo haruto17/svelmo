@@ -39,7 +39,10 @@
 </script>
 
 <body class="w-96 h-[80vh] mx-2 border-2 border-accent rounded-2xl">
-  <div class="flex justify-center my-4">
+  <div class="text-right my-0.5 mr-1">
+    <button class="btn btn-sm btn-circle btn-ghost">✕</button>
+  </div>
+  <div class="flex justify-center my-0.5">
     <input type="text" placeholder="title" class="input input-ghost w-full max-w-xs text-center" />
   </div>
   <div class="h-4/5 overflow-y-scroll">
