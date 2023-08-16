@@ -2,18 +2,13 @@
   import Category from "./lib/Category.svelte";
   import "./app.css";
 
-  let index = 0;
-
   function addCategory() {
     let li = document.createElement("li");
-    li.id = index.toString();
     li.className = "list-memo";
     let categoryList = document.getElementById("categoryList");
     categoryList.appendChild(li);
 
-    new Category({ target: document.getElementById(index.toString()) });
-
-    index++;
+    new Category({ target: li });
   }
 </script>
 
