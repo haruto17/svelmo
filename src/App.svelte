@@ -40,7 +40,9 @@
       </li> -->
     </ul>
 
-    <button class="btn btn-accent h-[80vh]" on:click={addCategory}> + </button>
+    <div class="tooltip tooltip-top" data-tip="add category">
+      <button class="btn btn-accent h-[80vh]" on:click={addCategory}>+</button>
+    </div>
   </div>
 </main>
 
