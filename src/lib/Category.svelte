@@ -36,10 +36,21 @@
     new_data.splice(index, 1);
     memo_data = new_data;
   }
+
+  function deleteCategory(e: any) {
+    let click_elem = e.target;
+    let first_li = click_elem.closest("li");
+    first_li.parentNode.removeChild(first_li);
+  }
 </script>
 
 <body class="w-96 h-[80vh] mx-2 border-2 border-accent rounded-2xl">
-  <div class="flex justify-center my-4">
+  <div class="text-right my-0.5 mr-1">
+    <div class="tooltip tooltip-bottom" data-tip="delete category">
+      <button class="btn btn-sm btn-circle btn-ghost" on:click={deleteCategory}>✕</button>
+    </div>
+  </div>
+  <div class="flex justify-center my-0.5">
     <input type="text" placeholder="title" class="input input-ghost w-full max-w-xs text-center" />
   </div>
   <div class="h-4/5 overflow-y-scroll">
