@@ -56,7 +56,7 @@
   <div class="h-4/5 overflow-y-scroll">
     <ul class="flex flex-col items-center">
       {#each memo_data as data, i}
-        <div class="card w-80 h-48 my-8 bg-neutrals border-2 border-accent text-primary-content">
+        <div class="card w-80 h-48 my-3 bg-neutrals border-2 border-accent text-primary-content">
           <div class="card-body">
             <div class="card-title truncate">
               <h2 class="truncate">{data.title}</h2>
