@@ -20,6 +20,12 @@
       <button class="btn btn-accent h-[80vh]" on:click={addCategory}>+</button>
     </div>
   </div>
+
+  <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+    <div>
+      <p>Copyright © 2023 - All right reserved by <a href="https://github.com/haruto17"><b>haruto17</b></a></p>
+    </div>
+  </footer>
 </main>
 
 <style></style>
