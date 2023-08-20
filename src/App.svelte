@@ -1,8 +1,8 @@
 <script lang="ts">
   import Category from "./lib/Category.svelte";
-  import {signInWithPopup} from "firebase/auth";
-  import {auth, provider} from "./firebase";
-  import {authStore} from "./store";
+  import { signInWithPopup } from "firebase/auth";
+  import { auth, provider } from "./firebase";
+  import { authStore } from "./store";
   import "./app.css";
 
   function addCategory() {
@@ -17,10 +17,10 @@
   async function handleLoginWithGithub() {
     try {
       const res = await signInWithPopup(auth, provider);
-      authStore.set({...$authStore, loggedIn: true, user: res.user});
-    } catch(e) {
+      authStore.set({ ...$authStore, loggedIn: true, user: res.user });
+    } catch (e) {
       console.log(e);
-    };
+    }
   }
 </script>
 
