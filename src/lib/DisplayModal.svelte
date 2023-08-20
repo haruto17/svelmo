@@ -1,18 +1,18 @@
 <script>
   import { createEventDispatcher } from "svelte";
   import { marked } from "marked";
-  import highlightjs from "highlight.js";
+  import { markedHighlight } from "marked-highlight";
+  import hljs from "highlight.js";
 
-  marked.setOptions({
-    highlight: function (code, lang) {
-      return highlightjs.highlightAuto(code, [lang]).value;
-    },
-    pedantic: false,
-    gfm: true,
-    breaks: true,
-    sanitize: true,
-    silent: false,
-  });
+  marked.use(
+    markedHighlight({
+      langPrefix: "hljs language-",
+      highlight(code, lang) {
+        const language = hljs.getLanguage(lang) ? lang : "plaintext";
+        return hljs.highlight(code, { language }).value;
+      },
+    })
+  );
 
   export let isOpen = false;
   export let aaa = {};
@@ -28,7 +28,7 @@
       subtitle: new_subtitle.value,
       contents: new_contents.value,
     };
-    console.log(marked(new_contents.value));
+    console.log(marked.parse(new_contents.value));
     dispatch("closeEvent", {
       new_memo: memo,
     });
