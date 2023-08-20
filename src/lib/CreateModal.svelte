@@ -26,9 +26,11 @@
   <form method="dialog" class="modal-box h-[80%] w-[95%] max-w-7xl">
     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={close}>✕</button>
     <h3 class="font-bold text-lg">Create New Memo</h3>
-    <input type="text" placeholder="Title" class="input input-bordered input-accent w-full max-w-xs" bind:value={title} />
-    <input type="text" placeholder="SubTitle" class="input input-bordered input-accent w-full max-w-xs" bind:value={subtitle} />
-    <textarea class="textarea textarea-accent w-full max-w-xs h-64 resize-none" placeholder="Contents" bind:value={contents} />
+    <div class="flex flex-col">
+      <input type="text" placeholder="Title" class="input input-bordered input-accent w-full max-w-7xl my-1" bind:value={title} />
+      <input type="text" placeholder="SubTitle" class="input input-bordered input-accent w-full max-w-7xl my-1" bind:value={subtitle} />
+      <textarea class="textarea textarea-accent w-full max-w-7xl h-64 resize-none my-1" placeholder="Contents" bind:value={contents} />
+    </div>
     <div class="modal-action">
       <button class="btn" on:click={close}>create</button>
     </div>

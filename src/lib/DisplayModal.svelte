@@ -38,26 +38,28 @@
 <dialog class="modal" class:modal-open={isOpen}>
   <form method="dialog" class="modal-box h-[80%] w-[95%] max-w-7xl">
     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={close}>✕</button>
-    <input
-      type="text"
-      placeholder="Title"
-      class="input input-bordered input-accent w-full max-w-xs"
-      value={aaa.title}
-      bind:this={new_title}
-    />
-    <input
-      type="text"
-      placeholder="SubTitle"
-      class="input input-bordered input-accent w-full max-w-xs"
-      value={aaa.subtitle}
-      bind:this={new_subtitle}
-    />
-    <textarea
-      class="textarea textarea-accent w-full max-w-xs h-64 resize-none"
-      placeholder="Contents"
-      value={aaa.contents}
-      bind:this={new_contents}
-    />
+    <div class="flex flex-col">
+      <input
+        type="text"
+        placeholder="Title"
+        class="input input-bordered input-accent w-full max-w-7xl my-1"
+        value={aaa.title}
+        bind:this={new_title}
+      />
+      <input
+        type="text"
+        placeholder="SubTitle"
+        class="input input-bordered input-accent w-full max-w-7xl my-1"
+        value={aaa.subtitle}
+        bind:this={new_subtitle}
+      />
+      <textarea
+        class="textarea textarea-accent w-full max-w-7xl h-64 resize-none my-1"
+        placeholder="Contents"
+        value={aaa.contents}
+        bind:this={new_contents}
+      />
+    </div>
   </form>
 </dialog>
 
