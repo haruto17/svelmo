@@ -1,5 +1,18 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { marked } from "marked";
+  import { markedHighlight } from "marked-highlight";
+  import hljs from "highlight.js";
+
+  marked.use(
+    markedHighlight({
+      langPrefix: "hljs language-",
+      highlight(code, lang) {
+        const language = hljs.getLanguage(lang) ? lang : "plaintext";
+        return hljs.highlight(code, { language }).value;
+      },
+    })
+  );
 
   export let isOpen = false;
   export let aaa = {};
@@ -15,6 +28,7 @@
       subtitle: new_subtitle.value,
       contents: new_contents.value,
     };
+    console.log(marked.parse(new_contents.value));
     dispatch("closeEvent", {
       new_memo: memo,
     });
