@@ -36,7 +36,7 @@
 </script>
 
 <dialog class="modal" class:modal-open={isOpen}>
-  <form method="dialog" class="modal-box">
+  <form method="dialog" class="modal-box h-[80%] w-[95%] max-w-7xl">
     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={close}>✕</button>
     <input
       type="text"
