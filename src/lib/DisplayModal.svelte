@@ -60,6 +60,12 @@
         bind:this={new_contents}
       />
     </div>
+    <div class="tooltip tooltip-top" data-tip="edit">
+      <input type="radio" name="radio-4" class="radio radio-accent" checked />
+    </div>
+    <div class="tooltip tooltip-top" data-tip="view">
+      <input type="radio" name="radio-4" class="radio radio-accent" />
+    </div>
   </form>
 </dialog>
 
