@@ -25,6 +25,8 @@
     "vite": "^4.4.9"
   },
   "dependencies": {
-    "firebase": "^10.2.0"
+    "firebase": "^10.2.0",
+    "highlight.js": "^11.8.0",
+    "marked": "^7.0.4"
   }
 }
