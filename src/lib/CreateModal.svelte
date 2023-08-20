@@ -29,7 +29,7 @@
     <div class="flex flex-col">
       <input type="text" placeholder="Title" class="input input-bordered input-accent w-full max-w-7xl my-1" bind:value={title} />
       <input type="text" placeholder="SubTitle" class="input input-bordered input-accent w-full max-w-7xl my-1" bind:value={subtitle} />
-      <textarea class="textarea textarea-accent w-full max-w-7xl h-64 resize-none my-1" placeholder="Contents" bind:value={contents} />
+      <textarea class="textarea textarea-accent w-full max-w-7xl h-[26rem] resize-none my-1" placeholder="Contents" bind:value={contents} />
     </div>
     <div class="tooltip tooltip-top" data-tip="edit">
       <input type="radio" name="radio-4" class="radio radio-accent" checked />

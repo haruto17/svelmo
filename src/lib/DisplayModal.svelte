@@ -38,7 +38,7 @@
 <dialog class="modal" class:modal-open={isOpen}>
   <form method="dialog" class="modal-box h-[80%] w-[95%] max-w-7xl">
     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" on:click={close}>✕</button>
-    <div class="flex flex-col">
+    <div class="flex flex-col mt-2">
       <input
         type="text"
         placeholder="Title"
@@ -54,7 +54,7 @@
         bind:this={new_subtitle}
       />
       <textarea
-        class="textarea textarea-accent w-full max-w-7xl h-64 resize-none my-1"
+        class="textarea textarea-accent w-full max-w-7xl h-[32rem] resize-none my-1"
         placeholder="Contents"
         value={aaa.contents}
         bind:this={new_contents}
