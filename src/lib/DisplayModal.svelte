@@ -1,5 +1,18 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { marked } from "marked";
+  import highlightjs from "highlight.js";
+
+  marked.setOptions({
+    highlight: function (code, lang) {
+      return highlightjs.highlightAuto(code, [lang]).value;
+    },
+    pedantic: false,
+    gfm: true,
+    breaks: true,
+    sanitize: true,
+    silent: false,
+  });
 
   export let isOpen = false;
   export let aaa = {};
@@ -15,6 +28,7 @@
       subtitle: new_subtitle.value,
       contents: new_contents.value,
     };
+    console.log(marked(new_contents.value));
     dispatch("closeEvent", {
       new_memo: memo,
     });
