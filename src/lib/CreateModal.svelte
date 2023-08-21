@@ -56,7 +56,10 @@
           bind:value={contents}
           on:input={createMDElement}
         />
-        <div id="createMD" class="prose max-w-none w-[calc(50%-4px)] h-[26rem] border border-accent rounded-lg my-1 ml-1 py-2 px-4" />
+        <div
+          id="createMD"
+          class="prose max-w-none w-[calc(50%-4px)] h-[26rem] overflow-y-scroll border border-accent rounded-lg my-1 ml-1 py-2 px-4"
+        />
       </div>
     </div>
     <div class="modal-action">
