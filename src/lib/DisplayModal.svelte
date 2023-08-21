@@ -60,7 +60,7 @@
           value={aaa.contents}
           bind:this={new_contents}
         />
-        <div id="md-area" class="w-[calc(50%-4px)] h-[32rem] my-1 border border-accent rounded-lg ml-1" />
+        <div id="md-area" class="w-[calc(50%-4px)] h-[32rem] border border-accent rounded-lg my-1 ml-1 py-2 px-4" />
       </div>
     </div>
   </form>
