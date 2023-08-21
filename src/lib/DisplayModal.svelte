@@ -63,7 +63,7 @@
     <div class="tooltip tooltip-top" data-tip="edit">
       <input type="radio" name="radio-4" class="radio radio-accent" checked />
     </div>
-    <div class="tooltip tooltip-top" data-tip="view">
+    <div class="tooltip tooltip-top" data-tip="preview">
       <input type="radio" name="radio-4" class="radio radio-accent" />
     </div>
   </form>

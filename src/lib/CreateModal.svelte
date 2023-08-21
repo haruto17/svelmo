@@ -1,7 +1,26 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from "svelte";
+  import { marked } from "marked";
+  import { markedHighlight } from "marked-highlight";
+  import hljs from "highlight.js";
+
+  marked.use(
+    markedHighlight({
+      langPrefix: "hljs language-",
+      highlight(code, lang) {
+        const language = hljs.getLanguage(lang) ? lang : "plaintext";
+        return hljs.highlight(code, { language }).value;
+      },
+    })
+  );
 
   export let isOpen = false;
+  export let memo_obj = {};
+  let viewMode = false;
+
+  let title = "";
+  let subtitle = "";
+  let contents = "";
 
   const dispatch = createEventDispatcher();
   const close = () => {
@@ -15,11 +34,6 @@
     subtitle = "";
     contents = "";
   };
-
-  let title = "";
-  let subtitle = "";
-  let contents = "";
-  export let memo_obj = {};
 </script>
 
 <dialog class="modal" class:modal-open={isOpen}>
@@ -34,7 +48,7 @@
     <div class="tooltip tooltip-top" data-tip="edit">
       <input type="radio" name="radio-4" class="radio radio-accent" checked />
     </div>
-    <div class="tooltip tooltip-top" data-tip="view">
+    <div class="tooltip tooltip-top" data-tip="preview">
       <input type="radio" name="radio-4" class="radio radio-accent" />
     </div>
     <div class="modal-action">
