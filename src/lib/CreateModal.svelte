@@ -16,7 +16,6 @@
 
   export let isOpen = false;
   export let memo_obj = {};
-  let viewMode = false;
 
   let title = "";
   let subtitle = "";
@@ -30,10 +29,19 @@
       contents: contents,
     };
     dispatch("closeEvent");
+    let area = document.getElementById("md-area1");
+    area.innerHTML = "";
     title = "";
     subtitle = "";
     contents = "";
   };
+
+  function createMDElement() {
+    let area = document.getElementById("md-area1");
+    area.innerHTML = "";
+    let md = marked.parse(contents);
+    area.insertAdjacentHTML("beforeend", md);
+  }
 </script>
 
 <dialog class="modal" class:modal-open={isOpen}>
@@ -48,8 +56,9 @@
           class="textarea textarea-accent w-[calc(50%-4px)] max-w-7xl h-[26rem] resize-none my-1 mr-1"
           placeholder="Contents"
           bind:value={contents}
+          on:input={createMDElement}
         />
-        <div id="md-area" class="w-[calc(50%-4px)] h-[26rem] border border-accent rounded-lg my-1 ml-1 py-2 px-4" />
+        <div id="md-area1" class="w-[calc(50%-4px)] h-[26rem] border border-accent rounded-lg my-1 ml-1 py-2 px-4" />
       </div>
     </div>
     <div class="modal-action">
