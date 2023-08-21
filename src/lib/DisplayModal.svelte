@@ -17,9 +17,8 @@
   export let isOpen = false;
 
   $: if (isOpen == true) {
-    let area = document.getElementById("md-area2");
     let md = marked.parse(aaa.contents);
-    area.insertAdjacentHTML("beforeend", md);
+    displayMD.insertAdjacentHTML("beforeend", md);
   }
 
   export let aaa = {};
@@ -38,15 +37,13 @@
     dispatch("closeEvent", {
       new_memo: memo,
     });
-    let area = document.getElementById("md-area2");
-    area.innerHTML = "";
+    displayMD.innerHTML = "";
   };
 
   function createMDElement() {
-    let area = document.getElementById("md-area2");
-    area.innerHTML = "";
+    displayMD.innerHTML = "";
     let md = marked.parse(new_contents.value);
-    area.insertAdjacentHTML("beforeend", md);
+    displayMD.insertAdjacentHTML("beforeend", md);
   }
 </script>
 
@@ -76,7 +73,7 @@
           bind:this={new_contents}
           on:input={createMDElement}
         />
-        <div id="md-area2" class="w-[calc(50%-4px)] h-[32rem] border border-accent rounded-lg my-1 ml-1 py-2 px-4" />
+        <div id="displayMD" class="w-[calc(50%-4px)] h-[32rem] border border-accent rounded-lg my-1 ml-1 py-2 px-4" />
       </div>
     </div>
   </form>

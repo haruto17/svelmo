@@ -29,18 +29,16 @@
       contents: contents,
     };
     dispatch("closeEvent");
-    let area = document.getElementById("md-area1");
-    area.innerHTML = "";
+    createMD.innerHTML = "";
     title = "";
     subtitle = "";
     contents = "";
   };
 
   function createMDElement() {
-    let area = document.getElementById("md-area1");
-    area.innerHTML = "";
+    createMD.innerHTML = "";
     let md = marked.parse(contents);
-    area.insertAdjacentHTML("beforeend", md);
+    createMD.insertAdjacentHTML("beforeend", md);
   }
 </script>
 
@@ -58,7 +56,7 @@
           bind:value={contents}
           on:input={createMDElement}
         />
-        <div id="md-area1" class="w-[calc(50%-4px)] h-[26rem] border border-accent rounded-lg my-1 ml-1 py-2 px-4" />
+        <div id="createMD" class="w-[calc(50%-4px)] h-[26rem] border border-accent rounded-lg my-1 ml-1 py-2 px-4" />
       </div>
     </div>
     <div class="modal-action">
