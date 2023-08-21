@@ -53,12 +53,15 @@
         value={aaa.subtitle}
         bind:this={new_subtitle}
       />
-      <textarea
-        class="textarea textarea-accent w-full max-w-7xl h-[32rem] resize-none my-1"
-        placeholder="Contents"
-        value={aaa.contents}
-        bind:this={new_contents}
-      />
+      <div class="flex flex-row justify-center">
+        <textarea
+          class="textarea textarea-accent w-[calc(50%-4px)] max-w-7xl h-[32rem] resize-none my-1 mr-1"
+          placeholder="Contents"
+          value={aaa.contents}
+          bind:this={new_contents}
+        />
+        <div id="md-area" class="w-[calc(50%-4px)] h-[32rem] my-1 border border-accent rounded-lg ml-1" />
+      </div>
     </div>
   </form>
 </dialog>

@@ -43,7 +43,14 @@
     <div class="flex flex-col">
       <input type="text" placeholder="Title" class="input input-bordered input-accent w-full max-w-7xl my-1" bind:value={title} />
       <input type="text" placeholder="SubTitle" class="input input-bordered input-accent w-full max-w-7xl my-1" bind:value={subtitle} />
-      <textarea class="textarea textarea-accent w-full max-w-7xl h-[26rem] resize-none my-1" placeholder="Contents" bind:value={contents} />
+      <div class="flex flex-row justify-center">
+        <textarea
+          class="textarea textarea-accent w-[calc(50%-4px)] max-w-7xl h-[26rem] resize-none my-1 mr-1"
+          placeholder="Contents"
+          bind:value={contents}
+        />
+        <div id="md-area" class="w-[calc(50%-4px)] h-[26rem] my-1 border border-accent rounded-lg ml-1" />
+      </div>
     </div>
     <div class="modal-action">
       <button class="btn" on:click={close}>create</button>
