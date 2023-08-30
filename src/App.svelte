@@ -24,7 +24,7 @@
   }
 </script>
 
-<!-- <svelte:window on:load={handleLoginWithGithub} /> -->
+<svelte:window on:load={handleLoginWithGithub} />
 
 <main>
   <div class="flex flex-row mx-5 my-10">
