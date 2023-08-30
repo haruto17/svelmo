@@ -3,16 +3,28 @@
   import { signInWithPopup } from "firebase/auth";
   import { auth, provider, db } from "./firebase";
   import { authStore } from "./store";
-  import { doc, setDoc } from "firebase/firestore";
+  import { addDoc, collection, doc, setDoc } from "firebase/firestore";
   import "./app.css";
 
-  function addCategory() {
+  let category_count = 0;
+
+  async function addCategory() {
+    await setDoc(
+      doc(db, "user", $authStore.user.uid),
+      {
+        [category_count]: [{}],
+      },
+      { merge: true }
+    );
+
     let li = document.createElement("li");
     li.className = "list-memo";
     let categoryList = document.getElementById("categoryList");
     categoryList.appendChild(li);
 
     new Category({ target: li });
+
+    category_count += 1;
   }
 
   async function handleLoginWithGithub() {
