@@ -19,11 +19,7 @@
     try {
       const res = await signInWithPopup(auth, provider);
       authStore.set({ ...$authStore, loggedIn: true, user: res.user });
-      await setDoc(doc(db, "cities", "LA"), {
-        name: "Los Angeles",
-        state: "CA",
-        country: "USA",
-      });
+      await setDoc(doc(db, "user", res.user.uid), {});
     } catch (e) {
       console.log(e);
     }
