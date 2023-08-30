@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GithubAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 import firebase from "firebase/compat/app";
 
 const firebaseConfig = {
@@ -14,3 +15,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const provider = new GithubAuthProvider();
+export const db = getFirestore(app);

@@ -1,8 +1,9 @@
 <script lang="ts">
   import Category from "./lib/Category.svelte";
   import { signInWithPopup } from "firebase/auth";
-  import { auth, provider } from "./firebase";
+  import { auth, provider, db } from "./firebase";
   import { authStore } from "./store";
+  import { doc, setDoc } from "firebase/firestore";
   import "./app.css";
 
   function addCategory() {
@@ -18,6 +19,11 @@
     try {
       const res = await signInWithPopup(auth, provider);
       authStore.set({ ...$authStore, loggedIn: true, user: res.user });
+      await setDoc(doc(db, "cities", "LA"), {
+        name: "Los Angeles",
+        state: "CA",
+        country: "USA",
+      });
     } catch (e) {
       console.log(e);
     }
