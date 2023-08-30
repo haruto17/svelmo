@@ -31,7 +31,7 @@
     try {
       const res = await signInWithPopup(auth, provider);
       authStore.set({ ...$authStore, loggedIn: true, user: res.user });
-      await setDoc(doc(db, "user", res.user.uid), {});
+      await setDoc(doc(db, "user", res.user.uid), {}, { merge: true });
     } catch (e) {
       console.log(e);
     }
